@@ -30,6 +30,15 @@ class zsLVIS:
 
         zs_train["annotations"] = []
         zs_train["images"] = []
+
+        for img in self.train_data['images']:
+            img_name = img['coco_url'].split('/')[-2:]
+            img['file_name'] = f'{img_name[0]}/{img_name[1]}'
+
+        for img in self.val_data['images']:
+            img_name = img['coco_url'].split('/')[-2:]
+            img['file_name'] = f'{img_name[0]}/{img_name[1]}'
+
         return zs_train, zs_val
 
     def divide_by_frequence(self, train_f, val_f, repeat:bool=False):
