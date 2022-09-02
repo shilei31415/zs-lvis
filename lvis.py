@@ -1,5 +1,6 @@
 import json
 from tqdm import tqdm
+# coco datasets https://zhuanlan.zhihu.com/p/461488682
 
 class zsLVIS:
     def __init__(self, img_path, train_json, val_json):
